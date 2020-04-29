@@ -11,7 +11,7 @@ w = wave.open(fname, 'rb')
 binary_data = w.readframes(w.getnframes())
 #print(binary_data)
 binary_data_len = len(binary_data)
-#print(binary_data_len)
+print(binary_data_len)
 w.close()
 
 
@@ -20,3 +20,10 @@ total_pxl = int(binary_data_len / 4)
 xpxl = int(sqrt(total_pxl))
 ypxl = xpxl
 print('x:', xpxl, '\n', 'y:', ypxl) 
+
+
+# converting values from binary to integer
+int_data = struct.unpack(str(binary_data_len) + 'B', binary_data)
+int_data_len = len(int_data)
+print(int_data_len)
+print("********Preparing**********")
