@@ -27,3 +27,12 @@ int_data = struct.unpack(str(binary_data_len) + 'B', binary_data)
 int_data_len = len(int_data)
 print(int_data_len)
 print("********Preparing**********")
+
+
+
+# loading integers to byte and creating the image
+colors = bytes(int_data)
+img = Image.frombytes("RGB", (xpxl, ypxl), colors)
+img.save("audio2img.png")
+img.show()
+print("********Done**********")
