@@ -13,3 +13,10 @@ binary_data = w.readframes(w.getnframes())
 binary_data_len = len(binary_data)
 #print(binary_data_len)
 w.close()
+
+
+# couning pixel and determining dimensions
+total_pxl = int(binary_data_len / 4)
+xpxl = int(sqrt(total_pxl))
+ypxl = xpxl
+print('x:', xpxl, '\n', 'y:', ypxl) 
